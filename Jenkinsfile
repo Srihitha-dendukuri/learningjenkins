@@ -40,8 +40,8 @@ pipeline {
         // Use a secure HTTPS transfer method (e.g., curl with -u for credentials)
         // **Important:** Replace with your actual deployment command and URL
         sh """
-          echo ${env.WORKSPACE}
-          sudo cp -rp ${env.WORKSPACE}/index.html /var/www/html/
+          
+          scp -rp ${env.WORKSPACE}/index.html cloud_user@f120574411474f3dbf996693ff893a102c.mylabserver.com:/var/www/html/index.html
         """
       }
     }
